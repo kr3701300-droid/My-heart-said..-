@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="precious movement" content="width=device-width, initial-scale=1.0">
+    <title>मेरे दिल की बात ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: #ffc0cb; 
+            color: #4a4a4a;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        .container {
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        h1 {
+            color: #d63384;
+            font-size: 2.5rem;
+            margin-top: 50px;
+            animation: heartBeat 1.5s infinite;
+        }
+        @keyframes heartBeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .section {
+            background: white;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 500px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .image-container {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            border: 2px solid #ee9ca7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        .shayari { 
+            font-size: 1.2rem;
+            color: #c2185b;
+            font-weight: bold;
+            line-height: 1.6;
+        }
+        .proposal-btn { 
+            background-color: #ff4d6d;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.3s;
+            position: relative;
+            z-index: 2;
+        }
+        .heart {
+            position: absolute;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Love_Heart_symbol.svg/800px-Love_Heart_symbol.svg.png') no-repeat center center;
+            background-size: contain;
+            width: 25px;
+            height: 25px;
+            opacity: 0;
+            animation: fall 10s linear infinite;
+            z-index: 0;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.7; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <audio autoplay loop id="bgMusic">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="container">
+        <h1>my princess ❤️</h1>
+
+        <div class="section">
+            <div class="image-container">
+                <img src="https://ambitious-teal-lguwen3ed5.edgeone.app/Screenshot_2026-01-16-13-54-18-484_com.instagram.android.jpg" alt="Memory 1">
+            </div>
+            <p class="shayari">
+                Nazar ko nazar ki Nazar na Lage koi achha bhi is kadar na lage <br>
+                tujhe dekha hai is nazar se, jis Nazar se tujhe Nazar na lage...!!
+            </p>
+        </div>
+
+        <div class="section">
+            <h3 style="color: #d63384;">वो खास बातें... ✨</h3>
+            <div class="image-container">
+                <img src="Screenshot_2026-01-16-13-24-12-795_com.instagram.android.jpg" alt="Memory 2">
+            </div>
+            <p>diwana hua tera ❣️, mujhe inkar nahi 🙅, kaise kah du 👀 ki mujhe tumse pyar nahi 🥺, kuch shararat to teri najron me bhi hai 👀,mai akela toh iska gunehgar nahi 💝</p>
+        </div>
+
+        <div class="section">
+            <div class="image-container">
+                <img src="Screenshot_2026-01-16-13-23-42-465_com.instagram.android.jpg" alt="Memory 3">
+            </div>
+            <p>तुम्हारी बातें मेरे दिन को खास बना देती हैं।</p>
+        </div>
+
+        <div class="section">
+            <div class="image-container">
+                <img src="Screenshot_2026-01-16-13-22-11-725_com.instagram.android.jpg" alt="Memory 4">
+            </div>
+            <p class="shayari">"तुम्हारे साथ बिताया हर पल एक 'Magic Moment' है"</p>
+        </div>
+
+        <div class="section" style="background: transparent; box-shadow: none;">
+            <h2>do you like me?</h2>
+            <button class="proposal-btn" onclick="celebrate()">yes ❤️</button>
+        </div>
+    </div>
+
+    <script>
+        // Falling Hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 4 + 's';
+            document.body.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 8000);
+        }
+        setInterval(createHeart, 400);
+
+        // Celebration Function
+        function celebrate() {
+            // Start Confetti
+            confetti({
+                particleCount: 150,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#ff4d6d', '#ffc0cb', '#ffffff']
+            });
+
+            // Show Alert
+            setTimeout(() => {
+                alert("I Love You Too My Princess! ❤️ आप मेरी दुनिया हो।");
+            }, 500);
+        }
+    </script>
+
+</body>
+</html>
